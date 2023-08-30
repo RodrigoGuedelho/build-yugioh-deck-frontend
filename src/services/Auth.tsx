@@ -8,16 +8,12 @@ class Auth {
   }
 
   async login(userName:string, password: string) {
-    try {
-        const response = await userService.login(userName, password);
-        localStorage.setItem("tokenBuikdYugioh", response.data.token);
-        
-        return true;
-    } catch (error) {
-      localStorage.removeItem("tokenBuikdYugioh");
-      return false;
-    }
+    const response = await userService.login(userName, password);
+    if (response.statusCode === 403)
+      throw response;
     
+    localStorage.setItem("tokenBuikdYugioh", response.data.token);
+    return response.data;  
   }
 
   logout(): void {

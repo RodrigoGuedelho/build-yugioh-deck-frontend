@@ -1,27 +1,44 @@
 import React, { useState } from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, notification } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import styles from './login.module.css';
 import auth from '../../services/Auth';
 import { useRouter } from 'next/router';
+import type { NotificationPlacement } from 'antd/es/notification/interface';
 
 function Login() {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const [api, contextHolder] = notification.useNotification();
+  const Context = React.createContext({ name: 'Default' });
   function onFinish() {
 
   }
 
   async function loginApi() {
-    const response  = await auth.login(login, password);
-    if (response)
+    try {
+      const response  = await auth.login(login, password);
       router.push("/");
+    } catch (error : any) {
+      openNotificationError(error.message);
+    }
   }
+
+
+  function openNotificationError (message: string) {
+    const placement: NotificationPlacement = 'topRight';
+    api.error({
+      message: `Notification`,
+      description:  message,
+      placement,
+    });
+  };
+
   return (
     <div className={styles.loginContainer}>
-      
+      {contextHolder}
       <div className={styles.loginForm}>
         <img src="/logo.png" alt="Logo" className={styles.logo} />
         
