@@ -1,0 +1,61 @@
+
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+ 
+}
+
+.loginForm {
+  text-align: center;
+  align-items: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 2px solid #ccc;
+  
+  border-radius: 8px 0px 0px 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 25%;
+  height: 600px;
+  background-color: #eae8e8;
+}
+
+.bannerDarkMagician {
+  width: 40%;
+  height: 600px;
+  background-color: #808383d1;
+  border-radius: 0px 8px 8px 0px;
+  padding: 20px;
+  border: 2px solid #e3e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#darkMagician {
+  width: 400px;
+  height: auto;
+  align-items: center;
+  text-align: center;
+}
+
+#darkMagician:hover {
+  width: 450px;
+  height: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  max-width: 200px;
+  margin-bottom: 5px;
+}
+
+.loginButton {
+  width: 100%;
+}
+
+
