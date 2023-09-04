@@ -1,6 +1,6 @@
-import { AxiosError } from 'axios';
 import api from './api';
-import { log } from 'console';
+import headerUtil from '../utils/HeaderUtil';
+import auth from './Auth';
 
 class UserService {
   public async login(userName: string, password: string) {
@@ -10,11 +10,8 @@ class UserService {
         password : password
       };
   
-      const response = await api.post("/auth/login", JSON.stringify(body), {
-        headers: {
-          'Content-Type' : 'application/json'
-        }
-      });
+      const response = await api.post("/auth/login", JSON.stringify(body), 
+        headerUtil.getHeaderPublicRoutes());
       return response;
     } catch (error: any) {
       return error.response.data;
@@ -32,13 +29,12 @@ class UserService {
           password : password
         };
     
-        const response = await api.post("/auth/register", JSON.stringify(body), {
-          headers: {
-            'Content-Type' : 'application/json'
-          }
-        });
+        const response = await api.post("/auth/register", JSON.stringify(body), 
+          headerUtil.getHeaderPublicRoutes());
         return response.data;
       } catch (error: any) {
+        if (error.response.status === 403)
+          auth.logout();
         throw error.response.data;
       }
   }

@@ -1,7 +1,6 @@
 import userService from './UserService';
 
 class Auth {
-  
   isAuthenticated(): boolean {
     var token = localStorage.getItem("tokenBuikdYugioh");
     return token !== undefined && token !== null;
@@ -22,7 +21,23 @@ class Auth {
   }
 
   getToken() {
-    return localStorage.getItem("tokenBuikdYugioh");
+    if (localStorage)
+      return localStorage.getItem("tokenBuikdYugioh");
+    return "";
+  }
+
+  getNameUser() {
+    var token = this.getToken();
+    if (token) {
+      var partesToken = [] 
+      partesToken = token.split(".");
+
+      var payloadToken = Buffer.from(partesToken[1], 'base64').toString('ascii');
+      payloadToken = JSON.parse(payloadToken)
+      console.log(">>>> " + payloadToken.sub)
+      return payloadToken.sub;
+    }
+    return "";  
   }
 }
 
