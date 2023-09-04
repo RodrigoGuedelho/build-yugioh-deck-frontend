@@ -1,0 +1,44 @@
+.layout-logo {
+  height: 100%;
+}
+
+.layout-logo img {
+  height: 80%;
+  width: auto;
+  align-items: center;
+  margin-top: 5%;
+}
+
+body {
+  margin: 0px;
+}
+
+.dropdown-menu-logout a {
+  color: #fff;
+}
+
+.dropdown-menu-logout  {
+  margin-left: 80%;
+}
+
+.title {
+  margin: 10px;
+}
+
+@media (max-width: 999px) {
+  .dropdown-menu-logout  {
+    margin-left: 60%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .dropdown-menu-logout  {
+    margin-left: 70%;
+  }
+}
+
+@media (max-width: 80px) {
+  .dropdown-menu-logout  {
+    margin-left: 50%;
+  }
+}
