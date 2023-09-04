@@ -1,0 +1,9 @@
+.card-container {
+  display: flex;
+  position: relative;
+  max-width: 99%; 
+}
+
+.card-container .ant-card {
+  margin: 10px;
+}
