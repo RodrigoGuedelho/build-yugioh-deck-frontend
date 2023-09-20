@@ -1,0 +1,24 @@
+.form-filters {
+  width: 25%;
+  position: relative;
+  border: 2px solid #7b7b7b;
+  border-radius: 5px;
+  padding: 20px;
+
+}
+
+.modal-add-card .ant-modal-body {
+  display: flex;
+}
+
+.card-container-add-card {
+  display: flex;
+  position: relative;
+  max-width: 75%; 
+  flex-wrap: wrap;
+  height: 450px;
+  overflow-x: auto;
+}
+.card-container-add-card .ant-card {
+  margin: 10px;
+}
