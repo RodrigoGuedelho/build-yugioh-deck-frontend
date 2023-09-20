@@ -8,9 +8,9 @@ function RegisterDeck(props: RegisterDeckProps) {
   const [description, setDescription] = useState("");
   const [api, contextHolder] = notification.useNotification();
   const Context = React.createContext({ name: 'Default' });
-  function save(){
+  async function save(){
     try {
-      deckService.save(description);
+      await deckService.save(description);
       openNotificationSuccess("Cadastro realizado com sucesso.");
       props.loadDecks();
       props.setOpen(false);
