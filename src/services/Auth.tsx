@@ -34,7 +34,6 @@ class Auth {
 
       var payloadToken = Buffer.from(partesToken[1], 'base64').toString('ascii');
       payloadToken = JSON.parse(payloadToken)
-      console.log(">>>> " + payloadToken.sub)
       return payloadToken.sub;
     }
     return "";  
