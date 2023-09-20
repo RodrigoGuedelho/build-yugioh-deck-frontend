@@ -1,11 +1,11 @@
-.card-container {
+.deck-container {
   display: flex;
   position: relative;
   max-width: 99%;
   overflow: auto; 
 }
 
-.card-container .ant-card {
+.deck-container .ant-card {
   margin: 10px;
   width: 240;
 }
@@ -13,3 +13,13 @@
 .card-new-deck {
   background: #d7d8d8 ;
 }
+
+.btn-delete {
+  display: none;
+}
+
+.ant-card:hover .btn-delete {
+  display: block;
+  position: absolute;
+  text-align: center;
+} 

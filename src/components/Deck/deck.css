@@ -2,8 +2,19 @@
   display: flex;
   position: relative;
   max-width: 99%; 
+  flex-wrap: wrap;
+  
 }
 
 .card-container .ant-card {
   margin: 10px;
 }
+.btn-delete {
+  display: none;
+}
+
+.ant-card:hover .btn-delete {
+  display: block;
+  position: absolute;
+  text-align: center;
+} 
