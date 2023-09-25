@@ -10,7 +10,7 @@ Aplicação Front-end desenvolvida para que usuários possam criar o seu perfil 
 
 ## Requisitos de software 
 
-![npm version](https://img.shields.io/badge/npm-9.8.1-red) ![npm version](https://img.shields.io/badge/react-17.0.2-blue) ![yarn version](https://img.shields.io/badge/yarn-1.22.18-blue)![npm version](https://img.shields.io/badge/docker-20.10.7-9cf)![node version](https://img.shields.io/badge/node-16.18.0-026e00)
+![npm version](https://img.shields.io/badge/npm-9.8.1-red) ![npm version](https://img.shields.io/badge/react-18.2.0-blue) ![yarn version](https://img.shields.io/badge/yarn-1.22.18-blue)![npm version](https://img.shields.io/badge/docker-20.10.7-9cf)![node version](https://img.shields.io/badge/node-16.18.0-026e00)
 
 
 
