@@ -43,15 +43,23 @@ Inicie a aplicação para desenvolvimento
 yarn next dev
 ```
 
+
+
 Gerar build da aplicação
 
 ```bash
 yarn next build
+```
+
+
 
 Gerar Iniciar aplicação após build
 
 ```bash
 yarn next start
+```
+
+
 
 Acesse  localhost na porta 3000 
 
