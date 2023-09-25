@@ -30,9 +30,9 @@ function AddCard(props: any) {
     setCards(response.data);
   }
 
-  async function addCards() {
+  async function addCards(card: CardDTO) {
     try {
-      const response = await deckService.addCard(cards[0], Number(router.query.id));
+      const response = await deckService.addCard(card, Number(router.query.id));
       if (response.status === 200) {
         openNotificationSuccess("Operação realizada com sucess.")
         props.loadData();
@@ -127,7 +127,7 @@ function AddCard(props: any) {
                 cover={<img alt="example" src={card.image} />}
               >
                 <Meta style={{ width: 250 }} />
-                <Button type="primary" icon={<CheckOutlined />} onClick={addCards} />
+                <Button type="primary" icon={<CheckOutlined />} onClick={()=> addCards(card)} />
               </Card>
           </Tooltip>
           )
